@@ -4,6 +4,7 @@ import ChatHeader from "./ChatHeader";
 import MessageInput from "./MessageInput";
 import MessageSkeleton from "./skeletons/MessageSkeleton";
 import { useEffect } from "react";
+import { formatMessageTime } from "../lib/utils";
 
 const ChatContainer = () => {
   const { messages, getMessages, isMessagesLoading, selectedUser } =
@@ -45,6 +46,12 @@ const ChatContainer = () => {
                   alt="profile pic"
                 />
               </div>
+            </div>
+
+            <div className="chat-header mb-1">
+              <time className="text-xs opacity-50 ml-1">
+                {formatMessageTime(message.createdAt)}
+              </time>
             </div>
 
             <div className="chat-bubble flex flex-col">
