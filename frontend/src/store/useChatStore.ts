@@ -10,7 +10,7 @@ interface IChatStore {
   isMessagesLoading: boolean;
   getUsers: () => {};
   getMessages: (userId: string) => {};
-  setSelectedUser: (selectedUser: IUser) => void;
+  setSelectedUser: (selectedUser: IUser | null) => void;
   sendMessage: ({ text, image }: { text: string; image: string | null }) => {};
 }
 
